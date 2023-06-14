@@ -47,6 +47,11 @@ object Build : BuildType({
             workingDir = "trino-app"
             shellScript = "npm install"
         }
+        nodeJS {
+            name = "New build step"
+            workingDir = "trino-app"
+            shellScript = "npm install"
+        }
     }
 
     triggers {
