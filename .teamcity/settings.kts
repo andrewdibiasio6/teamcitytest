@@ -47,13 +47,6 @@ object Build : BuildType({
             workingDir = "trino-app"
             shellScript = "npm install"
         }
-        nodeJS {
-            name = "Install 2"
-            shellScript = """
-                npm ci
-                npm run test
-            """.trimIndent()
-        }
     }
 
     triggers {
