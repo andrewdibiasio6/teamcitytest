@@ -70,8 +70,12 @@ object Deploy : BuildType({
 
     steps {
         nodeJS {
+            name = "Deploy"
             workingDir = "trino-app"
-            shellScript = "npm install"
+            shellScript = """
+                cat "Test"
+                npm install
+            """.trimIndent()
         }
     }
 
