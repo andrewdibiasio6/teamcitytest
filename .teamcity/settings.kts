@@ -33,10 +33,36 @@ project {
     vcsRoot(HttpsGithubComAndrewdibiasio6awsCdkDemosRefsHeadsMain)
 
     buildType(Build)
+    buildType(Deploy)
 }
 
 object Build : BuildType({
     name = "Build"
+
+    vcs {
+        root(HttpsGithubComAndrewdibiasio6awsCdkDemosRefsHeadsMain)
+    }
+
+    steps {
+        nodeJS {
+            workingDir = "trino-app"
+            shellScript = "npm install"
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+
+    features {
+        perfmon {
+        }
+    }
+})
+
+object Deploy : BuildType({
+    name = "Deploy"
 
     vcs {
         root(HttpsGithubComAndrewdibiasio6awsCdkDemosRefsHeadsMain)
