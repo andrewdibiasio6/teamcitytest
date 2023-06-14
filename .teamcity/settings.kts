@@ -88,6 +88,11 @@ object Deploy : BuildType({
         perfmon {
         }
     }
+
+    dependencies {
+        snapshot(Build) {
+        }
+    }
 })
 
 object HttpsGithubComAndrewdibiasio6awsCdkDemosRefsHeadsMain : GitVcsRoot({
